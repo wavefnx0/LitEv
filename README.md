@@ -1,19 +1,17 @@
-# litev 1.0.1
+# LitEv
 
-**litev** is a seed-based literature evolution analysis tool. Starting from a publication, it explores literature **before** and **after** the seed paper, summarizes topic development, highlights possible transitions, and creates an interactive HTML research dashboard.
+litev is a seed-based literature evolution analysis tool. Starting from a publication, it explores literature before and after the seed paper, summarizes topic development, highlights possible transitions, and creates an interactive HTML research dashboard. I used a similar version for a PhD-thesis in natural sciences. It is quite good for understanding the growth of certain research topics which are often very specialized and developed over large time-spans. It gives you an idea on which papers to read. If you published yourself you can also have a look at how the papers citations evolved until now. 
 
 litev uses **Crossref** and **OpenAlex** for bibliographic metadata. Optional AI features run locally through **Ollama**.
 
-> litev uses citation relationships internally to determine literature scope, but it does **not** display a citation graph or lineage visualization.
-
 ## Features
 
-- Start from a DOI, ISBN, PMID, PMCID, arXiv ID, OpenAlex work ID, or bibliographic text.
-- Explore **upstream** literature: references cited by the seed and, optionally, references of those papers.
-- Explore **downstream** literature: later papers citing the seed and, optionally, later citing generations.
+- Start from a DOI, ISBN, PMID, PMCID, arXiv ID, OpenAlex work ID.
+- Explore upstream literature: references cited by the seed and, optionally, references of those papers.
+- Explore downstream literature: later papers citing the seed and, optionally, later citing generations.
 - Summarize topics represented in the seed paper's references.
 - Track topic development and contextual similarity to the seed over time.
-- Highlight exploratory transition candidates without treating them as scientific-quality rankings.
+- Highlight exploratory transition literature.
 - Summarize topics, questions, and reported findings in downstream papers.
 - Optionally summarize selected papers' findings with a local Ollama model.
 - Optionally generate structured future directions and open research questions using local AI.
@@ -88,7 +86,7 @@ Two AI-assisted features are available:
 - **Paper findings summaries** — concise summaries based on retrieved abstracts.
 - **Future directions + open questions** — structured future-oriented analysis using upstream literature context. This option is available only when upstream hops are greater than zero.
 
-AI output should be treated as model-assisted interpretation, not as primary evidence. The underlying papers and metadata remain the evidential basis of the report.
+AI output should be treated as model-assisted interpretation, be aware that an AI can always be wrong about everything. The underlying papers and metadata remain the evidential basis of the report.
 
 ## Dashboard and outputs
 
@@ -216,6 +214,17 @@ README_WINDOWS.txt       short Windows build notes
 README.md                this file
 ```
 
-## Version
+## Warranty, liability and AI disclaimer
 
-This repository contains **litev 1.0.1**.
+litev is provided **“as is”**, without warranty of any kind, express or implied, including but not limited to warranties of **merchantability, fitness for a particular purpose, accuracy, reliability, availability, or non-infringement**.
+
+The authors and contributors make no guarantee that the software will operate without errors, interruptions, data loss, incompatibilities, or other adverse effects. Users are responsible for maintaining appropriate backups and for verifying results before relying on them.
+
+To the maximum extent permitted by law, the authors and contributors shall not be liable for any damages, data loss, system damage, loss of work, research consequences, or other losses arising from the use of litev.
+
+Bibliographic data from external services such as Crossref and OpenAlex may be incomplete or inaccurate. AI-generated content may contain errors or fabricated information and must not be treated as verified scientific evidence.
+
+Users are responsible for checking results against the original literature and for complying with applicable academic, institutional, publisher, and AI-use policies.
+
+Use of litev is at the user’s own risk.
+
