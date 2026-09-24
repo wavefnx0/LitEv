@@ -1,22 +1,20 @@
-# litev 1.0.1
+# LitEv
 
-**litev** is a seed-based literature evolution analysis tool. Starting from a publication, it explores literature **before** and **after** the seed paper, summarizes topic development, highlights possible transitions, and creates an interactive HTML research dashboard.
+LitEv is a seed-based literature evolution analysis tool based on a workflow I used for a PhD-thesis. Starting from a publication, it explores literature before and after the seed paper, summarizes topic development, highlights possible transitions, and creates an interactive HTML research dashboard.
 
-litev uses **Crossref** and **OpenAlex** for bibliographic metadata. Optional AI features run locally through **Ollama**.
-
-> litev uses citation relationships internally to determine literature scope, but it does **not** display a citation graph or lineage visualization.
+litev uses Crossref and OpenAlex for bibliographic metadata. Optional AI features run locally through Ollama.
 
 ## Features
 
 - Start from a DOI, ISBN, PMID, PMCID, arXiv ID, OpenAlex work ID, or bibliographic text.
-- Explore **upstream** literature: references cited by the seed and, optionally, references of those papers.
-- Explore **downstream** literature: later papers citing the seed and, optionally, later citing generations.
+- Explore upstream literature: references cited by the seed and, optionally, references of those papers.
+- Explore downstream literature: later papers citing the seed and, optionally, later citing generations.
 - Summarize topics represented in the seed paper's references.
 - Track topic development and contextual similarity to the seed over time.
-- Highlight exploratory transition candidates without treating them as scientific-quality rankings.
+- Highlight exploratory transition literature.
 - Summarize topics, questions, and reported findings in downstream papers.
 - Optionally summarize selected papers' findings with a local Ollama model.
-- Optionally generate structured future directions and open research questions using local AI.
+- Optionally generate structured future directions and open research questions using Ollama.
 - Export results as HTML, JSON, CSV, Excel, BibTeX, RIS, and Markdown.
 
 ## Upstream and downstream hops
@@ -88,11 +86,11 @@ Two AI-assisted features are available:
 - **Paper findings summaries** — concise summaries based on retrieved abstracts.
 - **Future directions + open questions** — structured future-oriented analysis using upstream literature context. This option is available only when upstream hops are greater than zero.
 
-AI output should be treated as model-assisted interpretation, not as primary evidence. The underlying papers and metadata remain the evidential basis of the report.
+AI output should only be treated as model-assisted interpretation, always check the results. The underlying papers and metadata remain the evidential basis of the report.
 
 ## Dashboard and outputs
 
-A normal run produces an interactive dashboard plus researcher-friendly exports. Depending on the selected scope and available metadata, the dashboard includes:
+A normal run produces an interactive dashboard plus exports in different formats. Depending on the selected scope and available metadata, the dashboard includes:
 
 - seed-paper overview;
 - topics cited by the seed paper;
@@ -188,7 +186,7 @@ Important interpretation points:
 
 ## Troubleshooting
 
-If a run fails, check the analysis log in the GUI or open the run's `litev_run.log` file. The **Copy diagnostics** button copies the current log for easier reporting.
+If a run fails, check the analysis log in the GUI or open the run's `litev_run.log` file. The Copy diagnostics button copies the current log for easier reporting.
 
 Common causes include:
 
@@ -215,7 +213,3 @@ version_info_*.txt       Windows executable version metadata
 README_WINDOWS.txt       short Windows build notes
 README.md                this file
 ```
-
-## Version
-
-This repository contains **litev 1.0.1**.
